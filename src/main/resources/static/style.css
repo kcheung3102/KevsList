@@ -1,0 +1,70 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container-form {
+    padding: 50px 0;
+    margin: auto;
+}
+
+.form-control {
+    margin-top: 20px;
+}
+
+
+body, html {
+    height: 100%;
+}
+.bg {
+
+    text-align: center;
+    /* The image used */
+    background-image: url("/headerbg.jpg");
+
+    /* Half height */
+    height: 50%;
+
+    /* Center and scale the image nicely */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.show-job {
+    padding-top: 300px;
+    margin: auto;
+}
+
+.form-bg {
+    /* The image used */
+    background-image: url("/headerbg.jpg");
+
+    /* Half height */
+    height: 100%;
+
+    /* Center and scale the image nicely */
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.intro-heading {
+    padding-top: 75px;
+    padding-bottom: 25px;
+}
+
+.top-nav-collapse {
+    background-color: slategray !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+
+@media (max-width: 991px) {
+    .navbar:not(.top-nav-collapse) {
+        background: slategray   !important;
+    }
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>KevsList</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+    <link  rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+<nav th:replace="base :: navbar"></nav>
+<div class="form-bg">
+    <div class="container show-job">
+    <div class="card text-center">
+        <!-- Card content -->
+        <div class="card-body">
+            <div th:if="${job.image != null and !job.image.equals('')}" >
+                <img class="card-img-top"  th:src="${job.image}" alt="image posted" />
+            </div>
+            <a href="/show">
+                <div class="mask rgba-white-slight"></div>
+            </a>
+            <!-- Title -->
+            <h4 class="card-title" th:text="${job.title}"></h4>
+            <!-- Text -->
+            <h5 class="card-text" >Posted On: <span th:text="${job.date}"></span></h5>
+            <p class="card-text" >Description:<span th:text="${job.description}"></span></p>
+            <p class="card-text" >Author:  <span th:text="${job.author}"></span></p>
+            <p class="card-text" >Phone Number:  <span th:text="${job.phoneNumber}"></span></p>
+            <!-- Button -->
+            <a type="button" class="btn btn-outline-primary" th:href="@{/delete/{id}(id=${job.id})}" >Delete this Job</a>
+
+        </div>
+    </div>
+</div>
+</div>
+
+
+
+
+
+<footer th:replace="base :: footer"></footer>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+</body>
+</html>

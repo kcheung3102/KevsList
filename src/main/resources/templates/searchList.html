@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>KevsList</title>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+    <!-- Bootstrap core CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Material Design Bootstrap -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/css/mdb.min.css" rel="stylesheet">
+    <link  rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+<nav th:replace="base :: navbar"></nav>
+<div class="bg">
+    <div class="intro-heading">
+        <h1 class="h1-responsive font-weight-bold mt-sm-5">Job Listings </h1>
+        <hr class="hr-light">
+        <h6 class="intro-heading mb-4">Find a Job that is right for you!</h6>
+    </div>
+</div>
+
+
+
+<!-- Card -->
+<div class="container col-md-8">
+    <div th:each="job : ${jobs}">
+        <div class="jumbotron jumbotron-fluid text-center ">
+
+            <!-- Card image -->
+            <div class="view overlay my-4">
+                <div th:if="${job.image != null and !job.image.equals('')}" >
+                    <img class="img-fluid"  th:src="${job.image}" alt="image posted" />
+                </div>
+                <a href="/show">
+                    <div class="mask rgba-white-slight"></div>
+                </a>
+            </div>
+            <!-- Title -->
+            <h4 class="card-title h4 pb-2">Job Position: <strong>[[${job.title}]]</strong></h4>
+
+            <h5 class="indigo-text h5 mb-4">Posted By: <span th:text="${job.author}"></span></h5>
+            <div class="card-body text-center">
+                <p class="card-text"> Description<small th:text="${job.description}"></small> </p>
+                <p class="card-text">Date Posted: <small th:text="${job.date}"></small></p>
+                <p class="card-text">Phone Number: <small th:text="${job.phoneNumber}"></small></p>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle text-center" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Actions
+                    </button>
+                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a  class="dropdown-item" th:href="@{/update/{id}(id=${job.id})}">Edit</a>
+                        <a  class="dropdown-item"th:href="@{/detail/{id}(id=${job.id})}">Details</a>
+                        <a  class="dropdown-item" th:href="@{/delete/{id}(id=${job.id})}">Delete</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Card -->
+
+
+
+<footer th:replace="base :: footer"></footer>
+
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Bootstrap tooltips -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<!-- MDB core JavaScript -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.8.11/js/mdb.min.js"></script>
+</body>
+</html>
