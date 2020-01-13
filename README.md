@@ -1,7 +1,8 @@
 # KevsList
-Simple job posting application
+Inspired by Craiglists, a simple job posting that lets you add, edit and delete job postings.
 
 # Technologies Used
+- Java
 - SpringBoot
 - MYSQL
 - HTML5 / CSS3
