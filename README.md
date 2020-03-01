@@ -4,7 +4,6 @@ Inspired by Craigslist, a simple job posting that lets you add, edit and delete 
 # Technologies Used
 - Java
 - SpringBoot
-- MYSQL
 - HTML5 / CSS3
 - BootStrap 4
 
